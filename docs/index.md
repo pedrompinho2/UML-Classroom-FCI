@@ -52,7 +52,8 @@ Sistema de Entregas com Drones
 
 # Diagrama de Classes
 
-<img width="784" height="1054" alt="image" src="https://github.com/user-attachments/assets/b0ea676d-8ed0-45a5-8383-3dbc0bc3155b" />
+<img width="709" height="1038" alt="image" src="https://github.com/user-attachments/assets/feea5e3f-96e1-442d-b0da-b0251e211c17" />
+
 
 
 # Diagrama de Estados
