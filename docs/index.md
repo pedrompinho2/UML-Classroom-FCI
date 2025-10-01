@@ -47,7 +47,8 @@ Sistema de Entregas com Drones
 
 # Diagrama de Sequência
 
-<img width="1095" height="669" alt="image" src="https://github.com/user-attachments/assets/c68075e8-0ae8-4e1e-8715-ebce98482808" />
+<img width="1095" height="669" alt="image" src="https://github.com/user-attachments/assets/7a4bc6ca-16f0-4e40-9f5b-eeb9595fb20f" />
+
 
 # Diagrama de Classes
 
