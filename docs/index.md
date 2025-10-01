@@ -51,7 +51,8 @@
 
 # Diagrama de Classes
 
-*&lt;Diagrama de relacionamento entre classes para os seus atributos e operações&gt;*
+*&lt;<img width="885" height="1054" alt="image" src="https://github.com/user-attachments/assets/d21e4702-8ba0-4bcc-8824-864c4051f60e" />
+s&gt;*
 
 # Diagrama de Estados
 
