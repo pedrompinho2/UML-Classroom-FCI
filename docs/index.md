@@ -3,7 +3,7 @@
 
 
 <font size="+12"><center>
-*&lt;Sistema de Entregas com Dorones&gt;*
+*&lt;Sistema de Entregas com Drones&gt;*
 </center></font>
 
 **Conteúdo**
