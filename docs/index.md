@@ -51,8 +51,9 @@
 
 # Diagrama de Classes
 
-*&lt;<img width="885" height="1054" alt="image" src="https://github.com/user-attachments/assets/d21e4702-8ba0-4bcc-8824-864c4051f60e" />
-s&gt;*
+*&lt;<img width="885" height="1054" alt="image" src="https://github.com/user-attachments/assets/a74c52e8-8586-4418-928a-e37acb07fa37" />
+
+&gt;*
 
 # Diagrama de Estados
 
