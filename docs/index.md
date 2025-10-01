@@ -47,12 +47,11 @@
 
 # Diagrama de Sequência
 
-*&lt;Diagrama de ordem e interação dos objetos&gt;*
+<img width="1095" height="669" alt="image" src="https://github.com/user-attachments/assets/c68075e8-0ae8-4e1e-8715-ebce98482808" />
 
 # Diagrama de Classes
 
-<img width="885" height="1054" alt="image" src="https://github.com/user-attachments/assets/a74c52e8-8586-4418-928a-e37acb07fa37" />
-
+<img width="784" height="1054" alt="image" src="https://github.com/user-attachments/assets/eeab15ff-6811-4025-bbd3-8cb472c9ec86" />
 
 
 # Diagrama de Estados
