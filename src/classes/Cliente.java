@@ -1,34 +1,46 @@
-public class Cliente extends Usuario {
+
+
+
+public class Cliente
+{
+    private String id;
+    private String login;
+    private String nome;
+    private String email;
     private Endereco endereco;
 
-    public Cliente(String idUsuario, String nome, String email, Endereco endereco) {
-        // Chamada obrigatória ao construtor da superclasse Usuario
-        super(idUsuario, nome, email);
+    // Novo construtor sem hashSenha e telefone
+    public Cliente(String nome, String login, String email, Endereco endereco)
+    {
+        this.id = "CLI" + System.currentTimeMillis();
+        this.nome = nome;
+        this.login = login;
+        this.email = email;
         this.endereco = endereco;
     }
 
-    /**
-     * Inicia a interacao de solicitacao de entrega, chamando o Sistema.
-     */
-    public void solicitarEntrega(Sistema sistema, String destino, double pesoKg) {
-        System.out.println("Cliente " + getNome() + ": Solicitando entrega para " + destino);
-        sistema.solicitarEntrega(this, destino, pesoKg);
+    public String getId()
+    {
+        return id;
     }
 
-    /**
-     * Recebe a notificacao de sucesso do Sistema.
-     */
-    public void notificarSucesso(String mensagem) {
-        System.out.println("Cliente " + getNome() + ": SUCESSO. " + mensagem);
+    public String getNome()
+    {
+        return nome;
     }
 
-    /**
-     * Implementacao do metodo abstrato herdado para notificar falhas.
-     */
-    @Override
-    public void notificarFalha(String mensagem) {
-        System.out.println("Cliente " + getNome() + ": FALHA. " + mensagem);
+    public String getLogin()
+    {
+        return login;
     }
 
-    public Endereco getEndereco() { return endereco; }
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public Endereco getEndereco()
+    {
+        return endereco;
+    }
 }

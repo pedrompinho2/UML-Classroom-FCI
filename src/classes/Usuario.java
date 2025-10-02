@@ -1,3 +1,4 @@
+
 public abstract class Usuario {
     private final String idUsuario;
     private final String nome;

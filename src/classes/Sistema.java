@@ -1,3 +1,5 @@
+
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -6,7 +8,6 @@ public class Sistema {
     private List<Pedido> pedidosRegistrados = new ArrayList<>();
 
     public Sistema() {
-        // Inicializa Drones para simulação
         dronesDisponiveis.add(new Drone("DRN-001", 10.0, 95));
         dronesDisponiveis.add(new Drone("DRN-002", 5.0, 80));
     }
@@ -15,44 +16,35 @@ public class Sistema {
     public void solicitarEntrega(Cliente cliente, String destino, double pesoKg) {
         System.out.println("Sistema: Recebendo solicitacao de entrega para " + destino);
 
-        
         if (!validarEndereco(destino)) {
             cliente.notificarFalha("Sistema: Endereco invalido.");
             return;
         }
 
-        
         Drone droneParaAtribuir = buscarDroneDisponivel(pesoKg);
         Pedido novoPedido = new Pedido(cliente, destino, pesoKg);
         pedidosRegistrados.add(novoPedido);
 
+
         if (droneParaAtribuir != null) {
-            
             try {
-                
                 droneParaAtribuir.atribuirMissao();
+       
                 novoPedido.setDroneAtribuido(droneParaAtribuir); 
+                
                 cliente.notificarSucesso("Sistema: Entrega agendada. Drone " + droneParaAtribuir.getId() + " atribuido.");
                 
             } catch (Exception e) {
-                
+    
                 novoPedido.cancelar();
                 cliente.notificarFalha("Sistema: Erro na atribuicao do drone: " + e.getMessage());
             }
 
         } else {
-            
             novoPedido.cancelar();
-            cliente.notificarFalha("Sistema: Nenhum drone disponivel ou adequado para esta carga. Pedido cancelado.");
+            cliente.notificarFalha("Sistema: Nenhum drone disponivel ou adequado para esta carga.");
         }
     }
-
-    
-    private boolean validarEndereco(String destino) {
-        System.out.println("Sistema: Validando endereco...");
-        return !destino.toLowerCase().contains("area restrita");
-    }
-
 
     private Drone buscarDroneDisponivel(double pesoKg) {
         for (Drone drone : dronesDisponiveis) {
