@@ -24,7 +24,7 @@ Sistema de Entregas com Drones
 # Autores
 
 * Pedro Montarroyos de Pinho
-* Aluno 2
+* Isabela Hissa Pinto
 
 # Descrição do Projeto
 

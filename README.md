@@ -19,19 +19,17 @@ A seguir, os passos para a preparação do projeto:
 10. Segurança é imprescindível nas plataforma de hospedagem de repositórios GIT. CUIDADO com exposição de senha e acesso ao repositório.
 
 
-# Projeto: *<Nome_do_seu_Projeto>*
+# Projeto: Serviço de entregas via drones
 
-# Grupo: *<Nome_do_seu_Grupo>*
+# Grupo: Isabela Hissa Pinto e Pedro Pinho
 
 # Descrição
 
-*<Descrição_resumida_do_projeto>*
+Uma startup deseja oferecer entregas rápidas de pequenos pacotes usando drones em áreas urbanas. O sistema precisa gerenciar usuários, pedidos e rotas de drones.
 
 # Documentação
 
 Os arquivos da documentação deste projeto estão na pasta [/docs](/docs), e o seu conteúdo é publicado em **https://<usuario>.github.io/UML-Classroom-FCI/blob/master/docs/index.md**
-
-
 
 # Releases
 
