@@ -20,17 +20,16 @@ public class Pedido {
         System.out.println("Pedido " + this.id + " CRIADO.");
     }
 
-    /**
-     * Altera o status do pedido para CANCELADO.
-     */
+    
+    //Altera o status do pedido para CANCELADO.
+    
     public void cancelar() {
         this.status = PedidoStatus.CANCELADO;
         System.out.println("Pedido " + this.id + " CANCELADO.");
     }
 
-    /**
-     * Associa o Drone ao Pedido e atualiza o status para ATRIBUIDO.
-     */
+    
+     //Associa o Drone ao Pedido e atualiza o status para ATRIBUIDO
     public void setDroneAtribuido(Drone drone) {
         this.droneAtribuido = drone;
         this.status = PedidoStatus.ATRIBUIDO;
