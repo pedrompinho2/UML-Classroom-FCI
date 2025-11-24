@@ -1,46 +1,51 @@
-
-
-
-public class Cliente
+public class Cliente extends Usuario
 {
-    private String id;
     private String login;
-    private String nome;
-    private String email;
+    private String senhaHash; //armazena a senha em formato de hash
     private Endereco endereco;
 
-    // Novo construtor sem hashSenha e telefone
-    public Cliente(String nome, String login, String email, Endereco endereco)
+    public Cliente(String nome, String login, String email, String senha, Endereco endereco)
     {
-        this.id = "CLI" + System.currentTimeMillis();
-        this.nome = nome;
+        super("CLI" + System.currentTimeMillis(), nome, email);//Construtor da superclasse usuário
         this.login = login;
-        this.email = email;
+        this.senhaHash = gerarHash(senha);
         this.endereco = endereco;
     }
 
-    public String getId()
-    {
-        return id;
+    @Override
+    public void notificarFalha(String mensagem) {
+        System.err.println("Notificação para " + getNome() + ": " + mensagem);
+    }
+    
+    public boolean validarLogin(String login) {
+        return login != null && login.length() > 3; 
     }
 
-    public String getNome()
-    {
-        return nome;
+    public boolean validarEmail(String email) {
+        return email != null && email.contains("@"); 
     }
 
-    public String getLogin()
-    {
+    private String gerarHash(String senha) {
+        return String.valueOf(senha.hashCode()); 
+    }
+
+    public String getId() {
+        return super.getIdUsuario();
+    }
+
+    public String getNome() {
+        return super.getNome();
+    }
+
+    public String getLogin() {
         return login;
     }
 
-    public String getEmail()
-    {
-        return email;
+    public String getEmail() {
+        return super.getEmail();
     }
 
-    public Endereco getEndereco()
-    {
+    public Endereco getEndereco() {
         return endereco;
     }
 }

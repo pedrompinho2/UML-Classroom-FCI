@@ -1,4 +1,3 @@
-
 public abstract class Usuario {
     private final String idUsuario;
     private final String nome;
@@ -10,10 +9,17 @@ public abstract class Usuario {
         this.email = email;
     }
 
-    // Método abstrato que subclasses devem implementar (polimorfismo)
     public abstract void notificarFalha(String mensagem);
 
-    public String getIdUsuario() { return idUsuario; }
-    public String getNome() { return nome; }
-    public String getEmail() { return email; }
+    public String getIdUsuario() { 
+        return idUsuario; 
+    }
+
+    public String getNome() { 
+        return nome; 
+    }
+    
+    public String getEmail() { 
+        return email; 
+    }
 }

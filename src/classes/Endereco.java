@@ -1,6 +1,3 @@
-
-
-
 public class Endereco {
     private String rua;
     private String numero;
@@ -17,7 +14,6 @@ public class Endereco {
     }
 
     
-    //Valida o formato do CEP
     public boolean validarFormato() {
         return this.cep != null && this.cep.length() == 8;
     }
@@ -27,9 +23,23 @@ public class Endereco {
         return rua + ", " + numero + " - " + cidade + "/" + estado + " (" + cep + ")";
     }
 
-    public String getRua() { return rua; }
-    public String getNumero() { return numero; }
-    public String getCidade() { return cidade; }
-    public String getEstado() { return estado; }
-    public String getCep() { return cep; }
+    public String getRua() { 
+        return rua; 
+    }
+
+    public String getNumero() { 
+        return numero; 
+    }
+
+    public String getCidade() { 
+        return cidade; 
+    }
+
+    public String getEstado() { 
+        return estado; 
+    }
+
+    public String getCep() { 
+        return cep; 
+    }
 }
