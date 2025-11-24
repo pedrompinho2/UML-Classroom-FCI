@@ -5,11 +5,21 @@ public class Sistema {
     private List<Drone> dronesDisponiveis;
     private List<Pedido> pedidosRegistrados;
     private List<Drone> totalDrones;
+    private DroneDAO droneDAO;
 
     public Sistema() {
-        this.dronesDisponiveis = new ArrayList<>();
         this.pedidosRegistrados = new ArrayList<>();
-        this.totalDrones = new ArrayList<>();
+        
+        this.droneDAO = new DroneDAO(); 
+        
+        this.totalDrones = this.droneDAO.carregarTodos(); 
+        this.dronesDisponiveis = new ArrayList<>();
+        
+        for (Drone d : this.totalDrones) {
+            if (d.getStatus().equals("DISPONIVEL")) {
+                this.dronesDisponiveis.add(d);
+            }
+        }
     }
     
     public Pedido solicitarEntrega(Cliente cliente, Endereco destino, double pesoKg) throws DroneIndisponivelException {
@@ -25,14 +35,15 @@ public class Sistema {
         Drone droneAtribuido = atribuirDrone(novoPedido); 
         
         if (droneAtribuido != null) {
-            //sucesso
             droneAtribuido.atribuirMissao();
             novoPedido.setDroneAtribuido(droneAtribuido);
+            
+            this.droneDAO.atualizarStatus(droneAtribuido.getId(), "ATRIBUIDO"); 
+            
             System.out.println("Entrega Agendada para " + cliente.getNome());
             return novoPedido;
         } else {
-            // falha
-            novoPedido.cancelar();
+            novoPedido.cancelar(); 
             cliente.notificarFalha("Nenhum drone disponível que suporte o peso.");
             throw new DroneIndisponivelException("Nenhum drone disponível.");
         }
@@ -42,7 +53,7 @@ public class Sistema {
         double peso = pedido.getPesoKg();
         
         for (Drone drone : this.dronesDisponiveis) {
-            if (drone.disponivel(peso) && drone.checarBateria()) {
+            if (drone.disponivel(peso)) {
                 this.dronesDisponiveis.remove(drone);
                 return drone;
             }
