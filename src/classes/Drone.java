@@ -34,4 +34,19 @@ public class Drone {
     public String getStatus() { 
         return status; 
     }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getBateria(){
+        return this.bateriaPercent;
+    }
+
+    @Override
+    public String toString() {
+        return "Drone{id='" + id + "', capacidadeKg=" + capacidadeKg +
+               ", bateriaPercent=" + bateriaPercent +
+               ", status='" + status + "'}";
+    }
 }

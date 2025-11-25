@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/slf4j-simple-2.0.13.jar",
+        "lib/slf4j-api-2.0.13.jar",
+        "lib/sqlite-jdbc-3.45.1.0.jar",
+        "/Users/hissapinto/Library/CloudStorage/OneDrive-Pessoal/_CC/S4/Projeto de Software/UML-Classroom-FCI/lib/sqlite-jdbc-3.45.1.0.jar"
+    ]
+}

@@ -43,6 +43,7 @@ public class Sistema {
             System.out.println("Entrega Agendada para " + cliente.getNome());
             return novoPedido;
         } else {
+            // Falha: Nenhum Drone Disponível
             novoPedido.cancelar(); 
             cliente.notificarFalha("Nenhum drone disponível que suporte o peso.");
             throw new DroneIndisponivelException("Nenhum drone disponível.");

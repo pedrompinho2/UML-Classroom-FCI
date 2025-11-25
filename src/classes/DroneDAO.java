@@ -10,7 +10,7 @@ public class DroneDAO {
         
         try (Connection conn = ConexaoBD.conectar();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) { 
+             ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
                 Drone d = new Drone(
@@ -18,25 +18,27 @@ public class DroneDAO {
                     rs.getDouble("capacidade_kg"),
                     rs.getInt("bateria_percent")
                 );
+                d.setStatus(rs.getString("status"));
                 drones.add(d);
             }
+
         } catch (SQLException e) {
-            System.err.println("Erro ao carregar drones do BD: " + e.getMessage());
+            System.err.println("Erro ao carregar drones: " + e.getMessage());
         }
+
         return drones;
     }
-    
+
     public void atualizarStatus(String droneId, String novoStatus) {
         String sql = "UPDATE DRONES SET status = ? WHERE id = ?";
-        
+
         try (Connection conn = ConexaoBD.conectar();
-             PreparedStatement ps = conn.prepareStatement(sql)) { 
-            
-            ps.setString(1, novoStatus); 
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, novoStatus);
             ps.setString(2, droneId);
-            
             ps.executeUpdate();
-            
+
         } catch (SQLException e) {
             System.err.println("Erro ao persistir status do drone: " + e.getMessage());
         }
